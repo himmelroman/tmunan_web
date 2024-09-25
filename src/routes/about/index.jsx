@@ -3,12 +3,17 @@
  * About
  *
  */
+import { useEffect } from 'react'
 import styles from './index.module.scss'
 
 const About = () => {
+	useEffect(() => {
+		document.title = 'About'
+	}, [])
+
 	return (
 		<div className={styles.cont}>
-			<h2>About</h2>
+			<span className='material-symbols-outlined'>help_center</span>
 		</div>
 	)
 }

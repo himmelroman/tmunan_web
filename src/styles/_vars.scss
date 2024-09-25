@@ -1,6 +1,7 @@
 // _vars.scss
 
 $deep-0: hsl(233, 18%, 8%);
+$deep-05: hsl(233, 18%, 12%);
 $deep-1: hsl(236, 20%, 14%);
 $deep-15: hsl(236, 20%, 15%);
 $deep-2: hsl(236, 20%, 16%);
@@ -21,6 +22,7 @@ $accent-2: hsl(6, 100%, 68%);
 $accent-3: hsl(332, 100%, 74%);
 $accent-4: hsl(225, 100%, 70%);
 $accent-5: hsl(185, 100%, 74%);
+$accent-6: hsl(236, 41%, 31%);
 
 $gray-0: #22222222;
 $gray-1: #333333;
@@ -30,8 +32,3 @@ $shadow-1: 0 0 15px $deep-0;
 
 $border-0: solid 1px #d0d0f010;
 $border-1: solid 1px $deep-3;
-
-$font-family: "Open Sans", sans-serif;
-$font-size: 16px;
-$text-color: $deep-5;
-$background-color: $deep-0;

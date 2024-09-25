@@ -4,19 +4,24 @@
  *
  */
 import { Link, Outlet } from 'react-router-dom'
+import FocusLock from 'react-focus-lock'
 import styles from './index.module.scss'
 
 const Root = () => {
 	return (
-		<div className={styles.cont}>
-			<nav>
-				<Link to='/'>Logo</Link>
+		<FocusLock className={styles.cont}>
+			<nav className={styles.nav}>
+				<Link to='/' className={styles.logo}>
+					Logo
+				</Link>
 				<Link to='/about'>About</Link>
 				<div className={styles.spacer} />
-				<Link to='/login'>Login</Link>
+				<Link to='/login'>
+					<span className='material-symbols-outlined'>login</span>
+				</Link>
 			</nav>
 			<Outlet />
-		</div>
+		</FocusLock>
 	)
 }
 

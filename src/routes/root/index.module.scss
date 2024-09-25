@@ -6,21 +6,32 @@
 @import "@/vars";
 
 .cont {
+	width: 100%;
+	height: 100%;
+
 	display: flex;
 	flex-direction: column;
 	align-items: stretch;
 
-	> nav {
-		display: flex;
-		padding: 20px;
-		gap: 20px;
-
-		> .spacer {
-			flex: 1;
-		}
-	}
-
 	> div {
 		flex: 1;
 	}
+}
+
+.nav {
+	display: flex;
+	align-items: center;
+	height: 80px;
+	padding: 0 32px;
+	gap: 30px;
+
+	// background-color: $deep-05;
+
+	> .spacer {
+		flex: 1;
+	}
+}
+
+.logo {
+	font-weight: bold;
 }

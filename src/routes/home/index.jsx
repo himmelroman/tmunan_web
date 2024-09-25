@@ -3,12 +3,17 @@
  * Home
  *
  */
+import { useEffect } from 'react'
 import styles from './index.module.scss'
 
 const Home = () => {
+	useEffect(() => {
+		document.title = ''
+	}, [])
+
 	return (
 		<div className={styles.cont}>
-			<h2>Home</h2>
+			<span className='material-symbols-outlined'>home</span>
 		</div>
 	)
 }

@@ -8,5 +8,41 @@
 .cont {
 	display: flex;
 	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 	padding: 20px;
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	padding: 10px;
+	gap: 10px;
+	// background-color: $deep-05;
+	margin-bottom: 100px;
+
+	button,
+	input {
+		width: 250px;
+		height: 40px;
+		padding: 0 10px;
+		font-weight: 500;
+	}
+
+	button {
+		color: $deep-5;
+		background-color: $accent-6;
+		// text-transform: uppercase;
+		// font-weight: 550;
+
+		&:hover {
+			filter: brightness(1.1) saturate(1.1);
+		}
+	}
+
+	input {
+		border-radius: 2px;
+		letter-spacing: 0.5px;
+		// border: 1px solid $deep-10;
+	}
 }
