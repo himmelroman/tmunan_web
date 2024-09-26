@@ -81,6 +81,18 @@ button {
 		pointer-events: none;
 		color: $deep-4;
 	}
+
+	&[data-primary] {
+		color: $deep-15;
+		background-color: $accent-2;
+		text-transform: uppercase;
+		font-weight: 700;
+		font-size: 14px;
+
+		&:hover {
+			background-color: $accent-3;
+		}
+	}
 }
 
 a {
@@ -127,8 +139,8 @@ textarea {
 	background-color: $deep-25;
 
 	transition:
-		color 0.2s,
-		background-color 0.2s;
+		color 0.1s,
+		background-color 0.1s;
 
 	&:focus-visible {
 		color: $deep-5;

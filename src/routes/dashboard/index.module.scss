@@ -8,12 +8,12 @@
 .cont {
 	display: flex;
 	flex-direction: column;
+	align-items: flex-start;
+	gap: 20px;
 	padding: 20px;
 
-	align-items: center;
-	justify-content: center;
-
 	span {
+		@include center;
 		font-size: 72px;
 		opacity: 0.3;
 		color: $accent-4;
