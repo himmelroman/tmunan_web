@@ -1,20 +1,21 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-// import { Auth0Provider } from '@auth0/auth0-react'
+import AuthGuard from '~/comps/AuthGuard'
+import AuthRoot from '~/comps/AuthRoot'
 import ErrorPage from '~/comps/ErrorPage'
 import About from '~/routes/about'
-import Home from './routes/home'
-import Root from './routes/root'
-import NotFound from './routes/not-found'
-
+import Callback from '~/routes/callback'
+import Dashboard from '~/routes/dashboard'
+import Home from '~/routes/home'
+import NotFound from '~/routes/not-found'
+import Profile from '~/routes/profile'
 import '~/styles/index.scss'
-import Login from './routes/login'
 
 const router = createBrowserRouter([
 	{
 		path: '/',
-		element: <Root />,
+		element: <AuthRoot />,
 		errorElement: <ErrorPage />,
 		children: [
 			{
@@ -26,12 +27,20 @@ const router = createBrowserRouter([
 				element: <About />,
 			},
 			{
-				path: '/login',
-				element: <Login />,
+				path: '/callback',
+				element: <Callback />,
 			},
 			{
 				path: '*',
 				element: <NotFound />,
+			},
+			{
+				path: '/dashboard',
+				element: <AuthGuard component={Dashboard} />,
+			},
+			{
+				path: '/profile',
+				element: <AuthGuard component={Profile} />,
 			},
 		],
 	},
@@ -39,8 +48,6 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
 	<StrictMode>
-		{/* <Auth0Provider domain='dev-9v3h9v5i.us.auth0.com' clientId='9v3h9v5i' redirectUri={window.location.origin}> */}
 		<RouterProvider router={router} />
-		{/* </Auth0Provider> */}
 	</StrictMode>
 )

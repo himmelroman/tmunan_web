@@ -3,22 +3,31 @@
  * Layout
  *
  */
-import { Link, Outlet } from 'react-router-dom'
+import { useAuth0 } from '@auth0/auth0-react'
 import FocusLock from 'react-focus-lock'
+import { NavLink, Outlet } from 'react-router-dom'
+import LoginButton from '~/comps/LoginButton'
+import LogoutButton from '~/comps/LogoutButton'
 import styles from './index.module.scss'
 
 const Root = () => {
+	const { isAuthenticated } = useAuth0()
+
 	return (
 		<FocusLock className={styles.cont}>
 			<nav className={styles.nav}>
-				<Link to='/' className={styles.logo}>
+				<NavLink to='/' className={styles.logo}>
 					Logo
-				</Link>
-				<Link to='/about'>About</Link>
+				</NavLink>
+				<NavLink to='/about'>About</NavLink>
+				{isAuthenticated && (
+					<>
+						<NavLink to='/dashboard'>Dashboard</NavLink>
+						<NavLink to='/profile'>Profile</NavLink>
+					</>
+				)}
 				<div className={styles.spacer} />
-				<Link to='/login'>
-					<span className='material-symbols-outlined'>login</span>
-				</Link>
+				{isAuthenticated ? <LogoutButton /> : <LoginButton />}
 			</nav>
 			<Outlet />
 		</FocusLock>

@@ -48,7 +48,7 @@ button {
 	// order: 50;
 
 	// defaults
-	padding: 6px;
+	padding: 6px 12px;
 	font-size: 15px;
 	border-radius: 2px;
 	box-sizing: border-box;
@@ -97,6 +97,11 @@ a {
 	&:focus-visible {
 		outline: none;
 	}
+
+	&.active {
+		pointer-events: none;
+		color: $deep-6;
+	}
 }
 
 input,
@@ -137,4 +142,8 @@ textarea {
 	&:focus {
 		outline: none;
 	}
+}
+
+.material-symbols-outlined {
+	user-select: none;
 }

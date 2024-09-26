@@ -32,3 +32,12 @@ $shadow-1: 0 0 15px $deep-0;
 
 $border-0: solid 1px #d0d0f010;
 $border-1: solid 1px $deep-3;
+
+@keyframes rotate {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}

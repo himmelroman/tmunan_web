@@ -1,0 +1,17 @@
+/**
+ *
+ * AuthGuard Styles
+ *
+ */
+@import "@/vars";
+
+.loader {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.spinner {
+	animation: rotate 2s linear infinite;
+}
