@@ -9,9 +9,12 @@ import { NavLink, Outlet } from 'react-router-dom'
 import LoginButton from '~/comps/LoginButton'
 import LogoutButton from '~/comps/LogoutButton'
 import styles from './index.module.scss'
+import Loader from '~/comps/Loader'
 
 const Root = () => {
-	const { isAuthenticated } = useAuth0()
+	const { isAuthenticated, isLoading } = useAuth0()
+
+	if (isLoading) return <Loader />
 
 	return (
 		<FocusLock className={styles.cont}>
