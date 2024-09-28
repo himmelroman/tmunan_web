@@ -41,7 +41,7 @@ jobs:
 
       - name: Deploy to S3
         run: |
-          aws s3 sync dist/ s3://tmunan-webapp-rt --delete
+          aws s3 sync dist/ s3://tmunan-web --delete
 
       - name: Invalidate CloudFront distribution
         run: |
