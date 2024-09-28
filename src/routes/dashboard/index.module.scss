@@ -8,14 +8,14 @@
 .cont {
 	display: flex;
 	flex-direction: column;
-	align-items: flex-start;
-	gap: 20px;
+	align-items: stretch;
+	gap: 40px;
 	padding: 20px;
 
-	span {
+	> span {
 		@include center;
 		font-size: 72px;
-		opacity: 0.3;
+		opacity: 0.1;
 		color: $accent-4;
 		margin-bottom: 100px;
 	}

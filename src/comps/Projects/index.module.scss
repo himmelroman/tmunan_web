@@ -1,0 +1,58 @@
+/**
+ *
+ * Projects Styles
+ *
+ */
+@import "@/vars";
+
+.cont {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.new {
+	align-self: flex-start;
+	padding: 10px 20px;
+}
+
+.list {
+	display: flex;
+	flex-wrap: wrap;
+	// flex-direction: column;
+	gap: 15px;
+}
+
+.project {
+	flex-shrink: 0;
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+	padding: 15px;
+
+	border-radius: 5px;
+	background-color: $deep-1;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+
+	h3 {
+		min-width: 200px;
+	}
+
+	button {
+		background-color: transparent;
+		padding: 0;
+		span {
+			font-size: 18px;
+		}
+	}
+
+	&:hover {
+		filter: brightness(1.1);
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	}
+}
+
+.delete {
+	display: none;
+}
