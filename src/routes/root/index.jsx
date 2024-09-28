@@ -7,9 +7,10 @@ import { useAuth0 } from '@auth0/auth0-react'
 import FocusLock from 'react-focus-lock'
 import { NavLink, Outlet } from 'react-router-dom'
 import LoginButton from '~/comps/LoginButton'
-import LogoutButton from '~/comps/LogoutButton'
+// import LogoutButton from '~/comps/LogoutButton'
 import styles from './index.module.scss'
 import Loader from '~/comps/Loader'
+import ProfileButton from '~/comps/ProfileButton'
 
 const Root = () => {
 	const { isAuthenticated, isLoading } = useAuth0()
@@ -30,7 +31,7 @@ const Root = () => {
 					</>
 				)}
 				<div className={styles.spacer} />
-				{isAuthenticated ? <LogoutButton /> : <LoginButton />}
+				{isAuthenticated ? <ProfileButton /> : <LoginButton />}
 			</nav>
 			<Outlet />
 		</FocusLock>
