@@ -1,8 +1,9 @@
 {
-	"name": "rubina",
+	"name": "tmunan-web",
 	"private": true,
 	"version": "0.0.0",
 	"type": "module",
+	"author": "amaau",
 	"scripts": {
 		"start": "vite",
 		"build": "vite build",
