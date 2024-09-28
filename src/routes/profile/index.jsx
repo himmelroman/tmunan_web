@@ -19,6 +19,8 @@ const Profile = () => {
 		<div className={styles.cont}>
 			<span className='material-symbols-outlined'>account_circle</span>
 			<div>{user.email}</div>
+			<h3>Billing</h3>
+			<h3>Delete account</h3>
 		</div>
 	)
 }

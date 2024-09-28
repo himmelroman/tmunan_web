@@ -8,7 +8,7 @@ import styles from './index.module.scss'
 
 const Home = () => {
 	useEffect(() => {
-		document.title = ''
+		document.title = 'Tmunan web'
 	}, [])
 
 	return (

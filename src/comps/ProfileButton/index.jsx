@@ -19,7 +19,7 @@ const ProfileButton = () => {
 	}
 
 	const handleClickOutside = e => {
-		if (e.target.closest(`.${styles.cont}`)) return
+		if (e.target.closest(`.${styles.avatar_button}`)) return
 		setOpen(false)
 	}
 
