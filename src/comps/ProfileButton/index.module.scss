@@ -11,7 +11,7 @@
 
 	&.open {
 		.menu {
-			display: block;
+			display: flex;
 		}
 	}
 }
@@ -29,6 +29,10 @@
 		border-radius: 50%;
 		object-fit: cover;
 	}
+
+	&:hover {
+		filter: saturate(1.2) brightness(1.1);
+	}
 }
 
 .menu {
@@ -36,12 +40,21 @@
 	top: 60px;
 	right: 0;
 	background-color: $deep-05;
+	z-index: 10;
 
 	border: 1px solid $deep-2;
 	border-radius: 2px;
 	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
 
 	display: none;
+
+	li {
+		flex-shrink: 0;
+		flex-wrap: nowrap;
+		a {
+			white-space: nowrap;
+		}
+	}
 }
 
 .name {

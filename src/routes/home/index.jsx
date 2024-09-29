@@ -14,6 +14,7 @@ const Home = () => {
 	return (
 		<div className={styles.cont}>
 			<span className='material-symbols-outlined'>home</span>
+			<h1>The Bloody Unnamed Thing</h1>
 		</div>
 	)
 }

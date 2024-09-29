@@ -3,18 +3,15 @@
  * Projects
  *
  */
+import { useEffect } from 'react'
 import styles from './index.module.scss'
 
 const Project = ({ title, id }) => {
 	return (
-		<div
-			className={styles.project}
-			tabIndex='0'
-			// onClick={() => window.open(`https://rt.tmunan.icu/${id}`, '_blank')}
-		>
+		<div className={styles.project} tabIndex='0'>
 			<h3>{title}</h3>
 			<span data-spacer />
-			<button>
+			<button onClick={() => window.open(`https://rt.tmunan.icu/${id}`, '_blank')}>
 				<span className='material-symbols-outlined'>launch</span>
 			</button>
 		</div>
@@ -29,9 +26,14 @@ const mockProjects = [
 ]
 
 const Projects = () => {
+	useEffect(() => {
+		document.title = 'Projects'
+	}, [])
+
 	return (
 		<div className={styles.cont}>
-			<h2>Projects</h2>
+			<span className='material-symbols-outlined'>category</span>
+			{/* <h1>Projects</h1> */}
 			<div className={styles.list}>
 				{mockProjects.map((project, i) => (
 					<Project key={i} {...project} />

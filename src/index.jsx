@@ -5,12 +5,13 @@ import AuthGuard from '~/comps/AuthGuard'
 import AuthRoot from '~/comps/AuthRoot'
 import ErrorPage from '~/comps/ErrorPage'
 import About from '~/routes/about'
+import Account from '~/routes/account'
 import Callback from '~/routes/callback'
-import Dashboard from '~/routes/dashboard'
 import Home from '~/routes/home'
 import NotFound from '~/routes/not-found'
-import Profile from '~/routes/profile'
+import Projects from '~/routes/projects'
 import '~/styles/index.scss'
+import Dashboard from './routes/dashboard'
 
 const router = createBrowserRouter([
 	{
@@ -39,8 +40,12 @@ const router = createBrowserRouter([
 				element: <AuthGuard component={Dashboard} />,
 			},
 			{
-				path: '/profile',
-				element: <AuthGuard component={Profile} />,
+				path: '/projects',
+				element: <AuthGuard component={Projects} />,
+			},
+			{
+				path: '/account',
+				element: <AuthGuard component={Account} />,
 			},
 		],
 	},

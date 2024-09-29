@@ -46,7 +46,7 @@ const ProfileButton = () => {
 			{open && (
 				<ul className={styles.menu}>
 					<li className={styles.email}>
-						<NavLink to='/profile'>{user.email}</NavLink>
+						<NavLink to='/account'>Account Settings</NavLink>
 					</li>
 					<li className={styles.logout} onClick={handleLogout} data-button>
 						<span className='material-symbols-outlined' data-icon>

@@ -11,7 +11,7 @@ body {
 
 body {
 	font-family: "Inter", sans-serif;
-	font-size: 15px;
+	font-size: 14px;
 	color: $deep-5;
 	background-color: $deep-05;
 	line-height: 1.5;
@@ -198,13 +198,22 @@ li {
 	cursor: pointer;
 }
 
+h1 {
+	font-size: 1.5rem;
+	font-weight: 500;
+	letter-spacing: 1px;
+	color: $deep-6;
+}
+
 h2 {
 	font-size: 1.2rem;
 	font-weight: 350;
 	letter-spacing: 1px;
-	color: $deep-5;
+	color: $deep-55;
 
 	margin-block: 0;
+	margin-top: 2rem;
+	align-self: stretch;
 
 	&:after {
 		content: "";
@@ -213,7 +222,8 @@ h2 {
 		height: 1px;
 		background-color: $deep-25;
 		opacity: 0.5;
-		margin-top: 15px;
+		margin-top: 0.5rem;
+		margin-bottom: 1.5rem;
 	}
 }
 
@@ -224,6 +234,10 @@ h3 {
 	font-weight: 400;
 	letter-spacing: 1px;
 	color: $deep-5;
+}
+
+p {
+	margin-block-start: 0;
 }
 
 [data-spacer] {

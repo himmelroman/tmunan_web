@@ -1,0 +1,32 @@
+/**
+ *
+ * Profile Styles
+ *
+ */
+@import "@/vars";
+
+.cont {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 20px;
+
+	span {
+		@include center;
+		font-size: 72px;
+		opacity: 0.1;
+		color: $accent-4;
+	}
+}
+
+.delete {
+	color: white;
+	background-color: $accent-2;
+	font-weight: 450;
+	letter-spacing: 0.2px;
+
+	&:hover {
+		color: white;
+		filter: brightness(1.2) saturate(1.2);
+	}
+}

@@ -20,15 +20,16 @@ const Root = () => {
 	return (
 		<FocusLock className={styles.cont}>
 			<nav className={styles.nav}>
-				<NavLink to='/' className={styles.logo}>
-					Logo
-				</NavLink>
-				<NavLink to='/about'>About</NavLink>
-				{isAuthenticated && (
+				<div className={styles.logo}>
+					<img src='/favicon.ico' alt='logo' />
+				</div>
+				{isAuthenticated ? (
 					<>
 						<NavLink to='/dashboard'>Dashboard</NavLink>
-						<NavLink to='/profile'>Profile</NavLink>
+						<NavLink to='/projects'>Projects</NavLink>
 					</>
+				) : (
+					<NavLink to='/about'>About</NavLink>
 				)}
 				<div className={styles.spacer} />
 				{isAuthenticated ? <ProfileButton /> : <LoginButton />}
