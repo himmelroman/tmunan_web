@@ -18,7 +18,10 @@ const Account = () => {
 	return (
 		<div className={styles.cont}>
 			<span className='material-symbols-outlined'>account_circle</span>
-			<h1>Account Settings</h1>
+			<h1>Account</h1>
+			<h2>Info</h2>
+			<p>{user.name}</p>
+			<p>{user.email}</p>
 			<h2>Billing</h2>
 			<p>
 				You are currently on the pigeon mail plan. Stay tuned for when we&apos;re ready to upgrade you to

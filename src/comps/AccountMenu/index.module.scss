@@ -29,22 +29,25 @@
 
 .menu {
 	position: absolute;
-	top: 60px;
-	right: 0;
-	background-color: $deep-05;
+	top: calc(var(--header-height) - 6px);
+	right: -15px;
+
+	background-color: $deep-2;
+	border: $border;
+
 	z-index: 10;
-
-	border: 1px solid $deep-2;
-	border-radius: 2px;
-	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-
 	display: none;
 
 	li {
+		cursor: pointer;
 		flex-shrink: 0;
 		flex-wrap: nowrap;
 		a {
 			white-space: nowrap;
+		}
+
+		> * {
+			margin-right: 40px;
 		}
 	}
 }

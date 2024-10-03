@@ -45,12 +45,9 @@ const AccountMenu = () => {
 			{open && (
 				<ul className={styles.menu}>
 					<li className={styles.email}>
-						<NavLink to='/account'>Account Settings</NavLink>
+						<NavLink to='/account'>Account</NavLink>
 					</li>
 					<li className={styles.logout} onClick={handleLogout} data-button>
-						<span className='material-symbols-outlined' data-icon>
-							logout
-						</span>
 						<span className={styles.label}>Log out</span>
 					</li>
 				</ul>

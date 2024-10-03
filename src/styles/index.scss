@@ -70,7 +70,7 @@ button {
 	background-color: transparent;
 
 	font-weight: 500;
-	text-transform: uppercase;
+	text-transform: capitalize;
 	letter-spacing: 1px;
 	font-family: inherit;
 	user-select: none;
@@ -179,7 +179,11 @@ li {
 	gap: 10px;
 
 	&:hover {
-		background-color: $deep-1;
+		background-color: $deep-3;
+		color: $deep-6;
+		li {
+			background-color: none;
+		}
 	}
 }
 
@@ -192,7 +196,7 @@ h1 {
 
 h2 {
 	font-size: 1.2rem;
-	font-weight: 350;
+	font-weight: 400;
 	letter-spacing: 1px;
 	color: $deep-55;
 
