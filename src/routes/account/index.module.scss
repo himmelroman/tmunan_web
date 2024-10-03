@@ -20,13 +20,8 @@
 }
 
 .delete {
-	color: white;
+	color: gainsboro;
 	background-color: $accent-2;
 	font-weight: 450;
 	letter-spacing: 0.2px;
-
-	&:hover {
-		color: white;
-		filter: brightness(1.2) saturate(1.2);
-	}
 }

@@ -1,17 +1,27 @@
+/**
+ *
+ *
+ * Entry point
+ *
+ *
+ */
+
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import { Provider } from 'react-redux'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+
 import AuthGuard from '~/comps/AuthGuard'
 import AuthRoot from '~/comps/AuthRoot'
 import ErrorPage from '~/comps/ErrorPage'
-import About from '~/routes/about'
 import Account from '~/routes/account'
 import Callback from '~/routes/callback'
 import Home from '~/routes/home'
 import NotFound from '~/routes/not-found'
-import Projects from '~/routes/projects'
+// import Projects from '~/routes/projects'
+import store from '~/lib/redux'
+import Dashboard from '~/routes/dashboard'
 import '~/styles/index.scss'
-import Dashboard from './routes/dashboard'
 
 const router = createBrowserRouter([
 	{
@@ -22,10 +32,6 @@ const router = createBrowserRouter([
 			{
 				index: true,
 				element: <Home />,
-			},
-			{
-				path: '/about',
-				element: <About />,
 			},
 			{
 				path: '/callback',
@@ -39,10 +45,10 @@ const router = createBrowserRouter([
 				path: '/dashboard',
 				element: <AuthGuard component={Dashboard} />,
 			},
-			{
-				path: '/projects',
-				element: <AuthGuard component={Projects} />,
-			},
+			// {
+			// 	path: '/projects',
+			// 	element: <AuthGuard component={Projects} />,
+			// },
 			{
 				path: '/account',
 				element: <AuthGuard component={Account} />,
@@ -53,6 +59,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
 	<StrictMode>
-		<RouterProvider router={router} />
+		<Provider store={store}>
+			<RouterProvider router={router} />
+		</Provider>
 	</StrictMode>
 )

@@ -12,6 +12,7 @@ const Account = () => {
 
 	useEffect(() => {
 		document.title = 'Account Settings'
+		console.log('user', user)
 	}, [user])
 
 	return (

@@ -5,6 +5,7 @@ import Root from '~/routes/root'
 const domain = import.meta.env.VITE_AUTH0_DOMAIN
 const clientId = import.meta.env.VITE_AUTH0_CLIENT_ID
 const redirectUri = import.meta.env.VITE_AUTH0_CALLBACK_URL
+const audience = import.meta.env.VITE_AUTH0_AUDIENCE
 
 const AuthRoot = () => {
 	const navigate = useNavigate()
@@ -19,6 +20,7 @@ const AuthRoot = () => {
 			clientId={clientId}
 			authorizationParams={{
 				redirect_uri: redirectUri,
+				audience,
 			}}
 			onRedirectCallback={onRedirectCallback}
 		>

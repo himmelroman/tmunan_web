@@ -5,15 +5,28 @@
  */
 import { useAuth0 } from '@auth0/auth0-react'
 import FocusLock from 'react-focus-lock'
-import { NavLink, Outlet } from 'react-router-dom'
+import { Link, NavLink, Outlet } from 'react-router-dom'
 import LoginButton from '~/comps/LoginButton'
 // import LogoutButton from '~/comps/LogoutButton'
 import styles from './index.module.scss'
 import Loader from '~/comps/Loader'
-import ProfileButton from '~/comps/ProfileButton'
+import AccountMenu from '~/comps/AccountMenu'
+import { useEffect } from 'react'
 
 const Root = () => {
-	const { isAuthenticated, isLoading } = useAuth0()
+	const { isAuthenticated, isLoading, getAccessTokenSilently } = useAuth0()
+
+	useEffect(() => {
+		if (isAuthenticated) {
+			const getToken = async () => {
+				const token = await getAccessTokenSilently()
+				console.log('token:')
+				console.log(token)
+				// TODO: get user data
+			}
+			getToken()
+		}
+	}, [isAuthenticated, getAccessTokenSilently])
 
 	if (isLoading) return <Loader />
 
@@ -23,16 +36,14 @@ const Root = () => {
 				<div className={styles.logo}>
 					<img src='/favicon.ico' alt='logo' />
 				</div>
-				{isAuthenticated ? (
+				{isAuthenticated && (
 					<>
 						<NavLink to='/dashboard'>Dashboard</NavLink>
-						<NavLink to='/projects'>Projects</NavLink>
+						<Link to='https://rt.tmunan.icu'>App</Link>
 					</>
-				) : (
-					<NavLink to='/about'>About</NavLink>
 				)}
-				<div className={styles.spacer} />
-				{isAuthenticated ? <ProfileButton /> : <LoginButton />}
+				<span data-spacer />
+				{isAuthenticated ? <AccountMenu /> : <LoginButton />}
 			</nav>
 			<Outlet />
 		</FocusLock>

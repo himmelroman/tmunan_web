@@ -50,7 +50,7 @@ const fDate = date => {
 
 const Dashboard = () => {
 	useEffect(() => {
-		document.title = 'About'
+		document.title = 'Dashboard'
 	}, [])
 
 	let totalMs = 0

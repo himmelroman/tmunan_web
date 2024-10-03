@@ -8,9 +8,10 @@ import { useState, useEffect, memo } from 'react'
 import styles from './index.module.scss'
 import useClasses from '~/lib/useClasses'
 import { NavLink } from 'react-router-dom'
+import Button from '../Button'
 
-const ProfileButton = () => {
-	const { logout, user } = useAuth0()
+const AccountMenu = () => {
+	const { logout } = useAuth0()
 
 	const [open, setOpen] = useState(false)
 
@@ -19,7 +20,7 @@ const ProfileButton = () => {
 	}
 
 	const handleClickOutside = e => {
-		if (e.target.closest(`.${styles.avatar_button}`)) return
+		if (e.target.closest(`.${styles.account_button}`)) return
 		setOpen(false)
 	}
 
@@ -40,9 +41,7 @@ const ProfileButton = () => {
 
 	return (
 		<div className={cls}>
-			<button className={styles.avatar_button} onClick={toggleOpen}>
-				<img src={user.picture} alt={user.name} />
-			</button>
+			<Button icon='account_circle' className={styles.account_button} onClick={toggleOpen} />
 			{open && (
 				<ul className={styles.menu}>
 					<li className={styles.email}>
@@ -60,4 +59,4 @@ const ProfileButton = () => {
 	)
 }
 
-export default memo(ProfileButton)
+export default memo(AccountMenu)
